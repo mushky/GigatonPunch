@@ -1,6 +1,6 @@
 development:
-  adapter: sqlite3
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   database: myapp_development
   pool: 5
   username: msaZaidi@gmail.com
