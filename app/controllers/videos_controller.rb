@@ -7,6 +7,13 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+
+    redirect_to root_url
+  end
+
   def create
     @video = Video.new(params[:video])
     if @video.save
