@@ -12,10 +12,10 @@
 #  duration   :string(255)
 #  likes      :integer
 #  dislikes   :integer
-#
+#  tags       :string
 
 class Video < ActiveRecord::Base
-  attr_accessible :link
+  attr_accessible :link, :tags
 
   YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
 
@@ -36,7 +36,7 @@ class Video < ActiveRecord::Base
   end
 
   validates :link, presence: true, format: YT_LINK_FORMAT
-
+  validates :tags, presence: true
   private
 
   def get_additional_info

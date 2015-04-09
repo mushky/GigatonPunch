@@ -1,10 +1,10 @@
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
+  encoding: utf8
   database: myapp_development
   pool: 5
-  username: myapp
-  password:
+  username: msaZaidi@gmail.com
+  password: RuWbdZx6
 test:
   adapter: postgresql
   encoding: unicode

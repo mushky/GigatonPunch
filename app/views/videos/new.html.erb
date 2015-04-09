@@ -7,7 +7,10 @@
     <div class="form-group">
       <%= f.label :link %>
       <%= f.text_field :link, class: 'form-control', required: true %>
-      <span class="help-block">Upload your Make Up Tutorial</span>
+      <%= f.label :tags %><br>
+      <%= f.text_field :tags%>
+
+      <span class="help-block">Upload Replays Now</span>
     </div>
 
     <%= f.submit class: 'btn btn-default' %>
