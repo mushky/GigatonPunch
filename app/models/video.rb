@@ -37,6 +37,11 @@ class Video < ActiveRecord::Base
 
   validates :link, presence: true, format: YT_LINK_FORMAT
   validates :tags, presence: true
+
+  def self.search(query)
+    where("tags like ?", "%#{query}%")
+  end
+  
   private
 
   def get_additional_info

@@ -1,7 +1,7 @@
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_development
+  adapter: sqlite3
+  encoding: utf8
+  database: factsheet_development
   pool: 5
   username: msaZaidi@gmail.com
   password: RuWbdZx6
