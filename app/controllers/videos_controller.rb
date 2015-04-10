@@ -1,6 +1,11 @@
 class VideosController < ApplicationController
+  
   def index
-    @videos = Video.order('created_at DESC')
+    if params[:search]
+      @videos = Video.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    else
+      @videos = Video.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 15)
+    end
   end
 
   def new

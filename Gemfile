@@ -28,7 +28,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'will_paginate', '~> 3.0.6'
 gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'youtube_it', '~> 2.4.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
