@@ -8,6 +8,7 @@
     </div>
   </form>
 </div>
+
 <div class="container">
     <h1>Gigaton Punch</h1>
     <p>Post your tournament replays</p>
@@ -30,12 +31,11 @@
               <div class="yt_video thumbnail">
                 <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
                               class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
-
                 <div class="caption">
                   <h5><%= video.title %></h5>
                   <p>Author: <b><%= video.author %></b></p>
                   <p>Duration: <b><%= video.duration %></b></p>
-                  <p>Tags: <b><%= video.tags %></b></p>
+                  <div id="tags"><p>Tags: <b><%= video.tags %></b></div></p>
                   <p>
                     <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> <%= video.likes %>
                     <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
@@ -45,7 +45,7 @@
             </div>
           <% end %>
         <% end %>
-      </div>
+      </div><br>
     <% end %>
   </div>
 <% end %>
