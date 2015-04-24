@@ -4,7 +4,7 @@ class VideosController < ApplicationController
     if params[:search]
       @videos = Video.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
     else
-      @videos = Video.order('created_at DESC').paginate(:page => params[:page], :per_page => 7)
+      @videos = Video.order('created_at DESC').paginate(:page => params[:page], :per_page => 12)
     end
   end
 
