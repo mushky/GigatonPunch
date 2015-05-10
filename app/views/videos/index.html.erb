@@ -10,11 +10,9 @@
 </div>
 
 <div class="container">
-    <h1>Gigaton Punch</h1>
-    <p>Post your tournament replays</p>
-    <p>
-      <%= link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg' %>
-    </p>
+  <img src="/assets/gigatonPunchResize.png">
+  <%= link_to 'Post Your Tournament Replays', new_video_path, class: 'btn btn-danger btn-lg' %>  
+  <p><em>a compilation of the best fighting game replays of all time</em></p>
 </div>
 
 <% if @videos.any? %>

@@ -1,0 +1,45 @@
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v140)
+"   /Users/mushky/Programming/webdev/rails_projects/Kompaqt_Builds/kompaqtYT
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+" ============================================================================
+../
+kompaqtYT/
+| .git/
+| app/
+| | assets/
+| | controllers/
+| | helpers/
+| | mailers/
+| | models/
+| | views/
+| | | layouts/
+| | | | application.html.erb*
+| | | shared/
+| | | users/
+| | | videos/
+| | | | index.html.erb*
+| | | | new.html.erb*
+| | .DS_Store
+| config/
+| db/
+| doc/
+| lib/
+| log/
+| public/
+| script/
+| tmp/
+| vendor/
+| .DS_Store
+| .gitignore*
+| Gemfile*
+| Gemfile.lock*
+| README.md*
+| Rakefile*
+| config.ru*
+| factsheet_development
+| keys
+| keys.pub
+| myapp_development
