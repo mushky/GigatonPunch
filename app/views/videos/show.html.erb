@@ -1,6 +1,7 @@
-<% @video %>
+<%= if @videos.any? %>
   <div class="container">
     <h1>Latest videos</h1>
 
-	<div id="player-wrapper"></div>
-<% end %>
+  <div id="player-wrapper"></div>
+  <% end %>
+</div>
