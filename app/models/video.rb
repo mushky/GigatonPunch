@@ -15,6 +15,7 @@
 #  tags       :string
 
 class Video < ActiveRecord::Base
+  has_many :comments
   attr_accessible :link, :tags
 
   YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i

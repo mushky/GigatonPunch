@@ -11,9 +11,33 @@
 <br>
 <div class="container">
   <iframe width="1120" height="641" src="https://www.youtube.com/embed/<%=@video.uid%>" frameborder="0" allowfullscreen></iframe>
-  <h1>
-    Comments Coming Soon
-  </h1>
+  
+  <h2>Add a comment:</h2>
+    <%= form_for([@video, @video.comments.build]) do |f| %>
+    <p>
+      <%= f.label :commenter %><br>
+      <%= f.text_field :commenter %>
+    </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
 
+  <h2>Comments</h2>
+    <% @video.comments.each do |comment| %>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.commenter %>
+    </p>
+   
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
 </div>
 
