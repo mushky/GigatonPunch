@@ -1,15 +1,4 @@
 <div class="container">
-  <form class="navbar-form navbar-right" role="search">
-    <div class="form-group", id="form-search">
-      <%= form_tag(videos_path, :method => "get", class: "navbar-form navbar-right") do %>
-      <em><%= text_field_tag :search, params[:search], placeholder: "Search Videos...", class: "form-control" %></em>
-        <%= submit_tag "Search", :name => nil, class: "btn-sm btn-primary" %>
-      <% end %>
-    </div>
-  </form>
-</div>
-<br>
-<div class="container">
   <iframe width="1120" height="641" src="https://www.youtube.com/embed/<%=@video.uid%>" frameborder="0" allowfullscreen></iframe>
   
   <h2>Add a comment:</h2>

@@ -1,16 +1,5 @@
 <div class="container">
-  <form class="navbar-form navbar-right" role="search">
-    <div class="form-group", id="form-search">
-      <%= form_tag(videos_path, :method => "get", class: "navbar-form navbar-right") do %>
-      <em><%= text_field_tag :search, params[:search], placeholder: "Search Videos...", class: "form-control" %></em>
-        <%= submit_tag "Search", :name => nil, class: "btn-sm btn-primary" %>
-      <% end %>
-    </div>
-  </form>
-</div>
-
-<div class="container">
-  <img src="/assets/gigatonpunchlogo.png" height="45%" width="45%">
+  <img src="/assets/gigatonpunchlogo.png" height="25%" width="25%">
   <%= link_to 'Post Your Tournament Replays', new_video_path, class: 'btn btn-danger btn-lg' %>  
   <p><em>a compilation of the best fighting game replays of all time</em></p>
 </div>
@@ -19,7 +8,7 @@
   <div class="container">
     <h1>Latest videos</h1>
 
-    <!-- <div id="player-wrapper"></div> -->
+    <div id="player-wrapper"></div>
 
     <% @videos.in_groups_of(3) do |group| %>
       <div class="row">

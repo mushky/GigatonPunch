@@ -12,6 +12,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+  <form class="navbar-form navbar-right" role="search">
+    <div class="form-group", id="form-search">
+      <%= form_tag(videos_path, :method => "get", class: "navbar-form navbar-right") do %>
+      <em><%= text_field_tag :search, params[:search], placeholder: "Search Videos...", class: "form-control" %></em>
+        <%= submit_tag "Search", :name => nil, class: "btn-sm btn-primary" %>
+      <% end %>
+    </div>
+  </form>
+</div>
 
 <div class="container">
   <% flash.each do |key, value| %>
@@ -26,10 +36,8 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-62608900-1', 'auto');
   ga('send', 'pageview');
-
 </script>"
 
 <%= yield %>
