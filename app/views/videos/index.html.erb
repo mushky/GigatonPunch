@@ -9,7 +9,7 @@
     <h1>Latest videos</h1>
 
     <div id="player-wrapper"></div>
-
+    <br>
     <% @videos.in_groups_of(3) do |group| %>
       <div class="row">
         <% group.each do |video| %>
