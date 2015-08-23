@@ -1,5 +1,4 @@
-class VideosController < ApplicationController
-  
+class VideosController < ApplicationController  
   def index
     if params[:search]
       @videos = Video.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
@@ -15,7 +14,6 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
   end
-
 
   def destroy
     @video = Video.find(params[:id])
