@@ -10,12 +10,12 @@ test:
   encoding: unicode
   database: myapp_test
   pool: 5
-  username: mmsaZaidi@gmail.com
-  password: RuWbZx6
+  username: 
+  password: 
 production:
   adapter: postgresql
   encoding: unicode
   database: myapp_production
   pool: 5
-  username: msaZaidi@gmail.com  
-  password: RuWbdZx6
+  username:   
+  password: 
