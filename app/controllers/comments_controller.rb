@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, :except => [:show, :index]
 
   def create
   	@video = Video.find(params[:video_id])
