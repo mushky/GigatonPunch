@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-	before_action :authenticate_user!
 
   def create
   	@video = Video.find(params[:video_id])
@@ -9,6 +8,7 @@ class CommentsController < ApplicationController
 
   def show
   	@comment = Comment.find()
+  end
 
   private
     def comment_params

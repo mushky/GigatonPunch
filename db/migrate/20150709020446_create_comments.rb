@@ -7,6 +7,6 @@ class CreateComments < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :comments, :video_id
+    add_index :comments, :video_id, :user_id
   end
 end

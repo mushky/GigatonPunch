@@ -14,45 +14,53 @@
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <div class="NavbarBrandDecoration">
-      <a class="navbar-brand"><%= link_to 'GIGATON PUNCH', root_path %></a>
+    <div class="navbar-header">
+      <div class="NavbarBrandDecoration">
+        <a class="navbar-brand"><%= link_to 'GIGATON PUNCH', root_path %></a>
+      </div>
     </div>
-  </div>
   <form class="navbar-form navbar-left" role="search">
     <div class="form-group", id="form-search">
       <%= form_tag(videos_path, :method => "get", class: "navbar-form navbar-right") do %>
         <em><%= text_field_tag :search, params[:search], placeholder: "Search Videos...", class: "form-control" %></em>
         <%= submit_tag "Search", :name => nil, class: "btn-sm btn-primary" %>
       <% end %>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>
+        <%= link_to 'Edit profile', edit_user_registration_path, class: "btn-sm btn-primary" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn-sm btn-danger"  %> 
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-sm btn-primary"  %>
+        <%= link_to "Login", new_user_session_path, class: "btn-sm btn-primary"   %>
+      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= value %>
-    </div>
-  <% end %>
-</div>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-62608900-1', 'auto');
-  ga('send', 'pageview');
-</script>
+
+  <div class="container">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-62608900-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 
 <%= yield %>
 
-<div id="footer">
-  <div class="container">
-    <p><img src="/assets/balrog.gif" /></p>
+  <div id="footer">
+    <div class="container">
+      <p><img src="/assets/balrog.gif" /></p>
+    </div>
   </div>
-</div>
 
-</body>
+  </body>
 </html>
