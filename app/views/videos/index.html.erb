@@ -21,12 +21,12 @@
                 <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
                 <div class="caption">
                   <h5><%= video.title %></h5>
-                  <p>Author: <b><%= video.author %></b></p>
-                  <p>Duration: <b><%= video.duration %></b></p>
-                  <div id="tags"><p>Tags: <b><%= video.tags %></b></div></p>
+                  <h6>Author: <b><%= video.author %></b></h6>
+                  <h6>Duration: <b><%= video.duration %></b></h6>
+                  <div id="tags"><h6>Tags: <b><%= video.tags %></b></div></h6>
                   <p>
-                    <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> <%= video.likes %>
-                    <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
+                    <span class="glyphicon glyphicon glyphicon-thumbs-up", color="black"></span> <%= video.likes %>
+                    <span class="glyphicon glyphicon glyphicon-thumbs-down", color="black"></span> <%= video.dislikes %>
                   <%= link_to 'View Video', video_path(video), class: "btn-sm btn-primary" %>|
                   </p>
                 </div>
