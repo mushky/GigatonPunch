@@ -1,4 +1,7 @@
 <div class="container">
+  <%= link_to image_tag("punchGloveLogo.png"), root_path %>
+  <br><br>
+
   <iframe width="1120" height="641" src="https://www.youtube.com/embed/<%=@video.uid%>" frameborder="0" allowfullscreen></iframe>
   
   <h2>Add a comment:</h2>
@@ -25,5 +28,7 @@
       <%= comment.body %>
     </p>
   <% end %>
+
+  <%= link_to 'Back', root_path, class: 'btn btn-primary btn-lg' %>
 </div>
 
