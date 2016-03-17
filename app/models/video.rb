@@ -1,19 +1,3 @@
-# == Schema Information
-#
-# Table name: videos
-#
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  link       :string(255)
-#  uid        :string(255)
-#  author     :string(255)
-#  duration   :string(255)
-#  likes      :integer
-#  dislikes   :integer
-#  tags       :string
-
 class Video < ActiveRecord::Base
   has_many :comments
   attr_accessible :link, :tags, :title
