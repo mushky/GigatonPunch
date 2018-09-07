@@ -1,41 +1,22 @@
 <div class="container">
   <%= link_to image_tag("punchGloveLogo.png"), root_path %>
-  <br><br>
-  <%= link_to 'Post Your Tournament Replays', new_video_path, class: 'btn btn-primary btn-lg' %>
-
-  <br><br><p><em>a compilation of the best fighting game replays of all time</em></p>
 </div>
 
-<% if @videos.any? %>
-  <div class="container">
-    <h1>Latest videos</h1>
 
-    <div id="player-wrapper"></div>
-    <br>
-    <% @videos.in_groups_of(3) do |group| %>
-      <div class="row">
-        <% group.each do |video| %>
-          <% if video %>
-            <div class="col-md-4">
-              <div class="yt_video thumbnail">
-                <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
-                <div class="caption">
-                  <h5><%= video.title %></h5>
-                  <h6>Author: <b><%= video.author %></b></h6>
-                  <h6>Duration: <b><%= video.duration %></b></h6>
-                  <div id="tags"><h6>Tags: <b><%= video.tags %></b></div></h6>
-                  <p>
-                    <span class="glyphicon glyphicon glyphicon-thumbs-up", color="black"></span> <%= video.likes %>
-                    <span class="glyphicon glyphicon glyphicon-thumbs-down", color="black"></span> <%= video.dislikes %>
-                  <%= link_to 'View Video', video_path(video), class: "btn-sm btn-primary" %>|
-                  </p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div><br>
-    <% end %>
-  <%= will_paginate @video %>
-  </div>
-<% end %>
+<div class="container">
+    <h1>Latest videos</h1>
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1000,
+        height: 650,
+        channel: "gigatonpunch"
+      });
+    </script> 
+
+</div>
